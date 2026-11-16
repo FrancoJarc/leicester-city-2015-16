@@ -51,12 +51,13 @@ Cada registro representa un partido e incluye:
 
 ## ✅ Calidad de los datos
 
-Antes del análisis se validó que:
+Antes del análisis se validó lo siguiente:
 
 - No hay registros duplicados.
 - El resultado registrado (local, empate o visitante) coincide con los goles en los 380 partidos.
 - No hay valores negativos en goles, tiros, faltas, córners ni tarjetas.
 - Los únicos valores nulos son tres cuotas de Betway (BWH, BWD, BWA) del partido Tottenham–Newcastle del 13/12/2015. Se conservó el registro porque esas columnas no se usan en el análisis.
+- Se encontró una inconsistencia: en Aston Villa vs. West Ham (26/12/2015), Aston Villa registra más tiros al arco (8) que tiros totales (5). Se conservó el registro sin modificar, porque no es posible saber qué valor es el incorrecto y el partido no afecta a los equipos analizados.
 
 ---
 
