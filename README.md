@@ -8,6 +8,8 @@ El objetivo de este proyecto es analizar los datos de la temporada 2015/16 para 
 
 > ¿Cómo logró Leicester City ganar la Premier League 2015/16?
 
+Para responderla se realizó un análisis exploratorio de datos con Python y Pandas, estudiando el rendimiento del equipo desde distintas perspectivas: resultados, ataque y defensa, comparación con sus rivales, desempeño como local y visitante, eficiencia de cara al arco, expectativas de las casas de apuestas y evolución a lo largo de la temporada.
+
 ## ⚡ Resumen
 
 - **Regularidad:** perdió solo 3 de 38 partidos, la menor cantidad de la liga.
@@ -16,8 +18,6 @@ El objetivo de este proyecto es analizar los datos de la temporada 2015/16 para 
 - **Superó al mercado:** según las cuotas de Bet365 se esperaban 53.3 puntos y sumó 81, la mayor diferencia de la liga.
 
 ![Puntos esperados y obtenidos](images/puntos_esperados_vs_reales.png)
-
-Para responderla se realizó un análisis exploratorio de datos con Python y Pandas, estudiando el rendimiento del equipo desde distintas perspectivas: resultados, ataque y defensa, comparación con sus rivales, desempeño como local y visitante, eficiencia de cara al arco, expectativas de las casas de apuestas y evolución a lo largo de la temporada.
 
 ---
 
