@@ -8,7 +8,7 @@ El objetivo de este proyecto es analizar los datos de la temporada 2015/16 para 
 
 > ¿Cómo logró Leicester City ganar la Premier League 2015/16?
 
-Para responderla se realizó un análisis exploratorio de datos con Python y Pandas, estudiando el rendimiento del equipo desde distintas perspectivas: resultados, ataque y defensa, comparación con sus rivales, desempeño como local y visitante, eficiencia de cara al arco y expectativas de las casas de apuestas.
+Para responderla se realizó un análisis exploratorio de datos con Python y Pandas, estudiando el rendimiento del equipo desde distintas perspectivas: resultados, ataque y defensa, comparación con sus rivales, desempeño como local y visitante, eficiencia de cara al arco, expectativas de las casas de apuestas y evolución a lo largo de la temporada.
 
 ---
 
@@ -19,6 +19,7 @@ Para responderla se realizó un análisis exploratorio de datos con Python y Pan
 - Evaluar su rendimiento como local y como visitante.
 - Medir su eficiencia ofensiva.
 - Contrastar sus resultados con las expectativas de las casas de apuestas (Bet365).
+- Analizar cómo se construyó el título a lo largo de la temporada.
 - Identificar los factores que explican la obtención del campeonato.
 
 ---
@@ -127,18 +128,38 @@ Leicester registró la mejor tasa de conversión entre estos equipos y también 
 
 ---
 
-## 5. Rendimiento frente a las expectativas de las apuestas
+## 5. Superó las expectativas del mercado durante toda la temporada
 
-Se consideró a un equipo favorito cuando su cuota de Bet365 era menor que la de su rival.
+A partir de las cuotas de Bet365 se calcularon los **puntos esperados** de cada equipo: la probabilidad implícita de cada resultado (1 / cuota), ajustada por el margen de la casa de apuestas, se convierte en puntos esperados por partido (3 × P(victoria) + 1 × P(empate)) y se suma en los 38 partidos.
 
-| Métrica | Valor |
-|----------|----------|
-| Partidos como favorito | 21 |
-| Partidos como no favorito | 17 |
-| Victorias como no favorito | 7 |
-| Puntos obtenidos como no favorito | 28 |
+| Equipo | Puntos esperados | Puntos obtenidos | Diferencia |
+|----------|----------|----------|----------|
+| Leicester | 53.3 | 81 | +27.7 |
+| West Ham | 46.6 | 62 | +15.4 |
+| Tottenham | 65.0 | 70 | +5.0 |
+| Arsenal | 74.0 | 71 | -3.0 |
+| Manchester City | 75.9 | 66 | -9.9 |
 
-Leicester no fue favorito en 17 de sus 38 partidos (45%) y aun así sumó 28 puntos en esos encuentros, el 34.6% de su total.
+Leicester fue, por lejos, el equipo que más superó lo que esperaba el mercado.
+
+![Puntos esperados y obtenidos](images/puntos_esperados_vs_reales.png)
+
+Las casas de apuestas ajustaron sus expectativas a medida que avanzaba la temporada, pero Leicester siguió superándolas:
+
+| Mitad de la temporada | Partidos como favorito | Prob. promedio de ganar | Puntos esperados | Puntos obtenidos |
+|----------|----------|----------|----------|----------|
+| Partidos 1 a 19 | 7 de 19 | 34% | 24.4 | 39 |
+| Partidos 20 a 38 | 14 de 19 | 42% | 28.8 | 42 |
+
+*Se consideró favorito a un equipo cuando su cuota de victoria era menor que la de su rival.*
+
+---
+
+## 6. Tomó la punta en la segunda mitad y no la soltó
+
+Comparando los puntos acumulados partido a partido, Leicester tuvo menos puntos que Arsenal o Tottenham después de sus partidos 7 a 12 y del partido 20. Desde el partido 21 fue siempre el que más puntos sumaba de los tres, y terminó con 10 puntos de ventaja.
+
+![Puntos acumulados](images/puntos_acumulados.png)
 
 ---
 
@@ -146,7 +167,9 @@ Leicester no fue favorito en 17 de sus 38 partidos (45%) y aun así sumó 28 pun
 
 Los datos indican que Leicester City no ganó la Premier League 2015/16 por dominar una estadística específica, sino por combinar consistencia, equilibrio y eficiencia.
 
-No fue el equipo más goleador ni el que menos goles recibió, pero se mantuvo entre los mejores en ambas facetas y fue el que menos partidos perdió. Fue el mejor local y el mejor visitante de la liga, con una ventaja mayor fuera de casa, necesitó menos tiros que sus rivales directos para marcar una cantidad de goles parecida y obtuvo una parte importante de sus puntos en partidos en los que no era favorito.
+No fue el equipo más goleador ni el que menos goles recibió, pero se mantuvo entre los mejores en ambas facetas y fue el que menos partidos perdió. Fue el mejor local y el mejor visitante de la liga, con una ventaja mayor fuera de casa, y necesitó menos tiros que sus rivales directos para marcar una cantidad de goles parecida.
+
+Además, sumó 27.7 puntos más de los que esperaba el mercado, la mayor diferencia de la liga, y lo hizo en las dos mitades de la temporada, incluso después de que las casas de apuestas empezaran a considerarlo favorito. Tomó la punta a partir de su partido 21 y no la volvió a perder.
 
 ---
 
@@ -155,6 +178,7 @@ No fue el equipo más goleador ni el que menos goles recibió, pero se mantuvo e
 - Se analiza una sola temporada (38 partidos de Leicester), por lo que las diferencias entre equipos pueden estar influidas por la variabilidad propia de una muestra chica.
 - El dataset no incluye métricas de calidad de las ocasiones (como goles esperados o xG). Por eso, una tasa de conversión alta no permite distinguir entre calidad de definición y variabilidad.
 - La definición de favorito compara solo las cuotas de victoria de ambos equipos y no tiene en cuenta la cuota del empate.
+- Los puntos esperados se calculan con las cuotas de una sola casa de apuestas (Bet365) y con un ajuste proporcional del margen, que es el método más simple. Otros métodos de ajuste pueden dar valores levemente distintos.
 
 ---
 
