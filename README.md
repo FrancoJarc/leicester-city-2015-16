@@ -185,7 +185,7 @@ Además, sumó 27.7 puntos más de los que esperaba el mercado, la mayor diferen
 ## 📁 Estructura del repositorio
 
 ```
-premier_league_analysis/
+leicester-city-2015-16/
 ├── data/
 │   ├── season-1516_csv.csv     # Dataset de la temporada 2015/16
 │   └── datapackage.json        # Metadatos y licencia de la fuente
@@ -201,8 +201,8 @@ premier_league_analysis/
 
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/FrancoJarc/premier_league_analysis.git
-   cd premier_league_analysis
+   git clone https://github.com/FrancoJarc/leicester-city-2015-16.git
+   cd leicester-city-2015-16
    ```
 2. Instalar las dependencias:
    ```bash
