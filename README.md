@@ -8,6 +8,15 @@ El objetivo de este proyecto es analizar los datos de la temporada 2015/16 para 
 
 > ¿Cómo logró Leicester City ganar la Premier League 2015/16?
 
+## ⚡ Resumen
+
+- **Regularidad:** perdió solo 3 de 38 partidos, la menor cantidad de la liga.
+- **Rendimiento en todas las condiciones:** fue el mejor local y el mejor visitante del campeonato.
+- **Eficiencia:** tuvo la mejor conversión de tiros de la liga (13%, contra un promedio de 10.5%).
+- **Superó al mercado:** según las cuotas de Bet365 se esperaban 53.3 puntos y sumó 81, la mayor diferencia de la liga.
+
+![Puntos esperados y obtenidos](images/puntos_esperados_vs_reales.png)
+
 Para responderla se realizó un análisis exploratorio de datos con Python y Pandas, estudiando el rendimiento del equipo desde distintas perspectivas: resultados, ataque y defensa, comparación con sus rivales, desempeño como local y visitante, eficiencia de cara al arco, expectativas de las casas de apuestas y evolución a lo largo de la temporada.
 
 ---
@@ -58,14 +67,14 @@ Antes del análisis se validó lo siguiente:
 - No hay registros duplicados.
 - El resultado registrado (local, empate o visitante) coincide con los goles en los 380 partidos.
 - No hay valores negativos en goles, tiros, faltas, córners ni tarjetas.
-- Los únicos valores nulos son tres cuotas de Betway (BWH, BWD, BWA) del partido Tottenham–Newcastle del 13/12/2015. Se conservó el registro porque esas columnas no se usan en el análisis.
-- Se encontró una inconsistencia: en Aston Villa vs. West Ham (26/12/2015), Aston Villa registra más tiros al arco (8) que tiros totales (5). Se conservó el registro sin modificar, porque no es posible saber qué valor es el incorrecto y el partido no afecta a los equipos analizados.
+- Los únicos valores nulos son tres cuotas de Betway (BWH, BWD, BWA) del partido Tottenham–Newcastle del 13/12/2015. Se conservó el registro porque el análisis usa las cuotas de Bet365, no las de Betway.
+- Se encontró una inconsistencia: en Aston Villa vs. West Ham (26/12/2015), Aston Villa registra más tiros al arco (8) que tiros totales (5). Se conservó el registro sin modificar, porque no es posible saber qué valor es el incorrecto. No afecta a Leicester. Sí entra en el gráfico de tiros de toda la liga, pero Aston Villa es el equipo con menos tiros y goles del campeonato, y una diferencia de pocos tiros no cambia su posición en el gráfico.
 
 ---
 
 # 🔍 Principales hallazgos
 
-## 1. Consistencia por encima de todo
+## 1. Regularidad por encima de todo
 
 Leicester finalizó la temporada con:
 
@@ -108,7 +117,7 @@ Además, fue el mejor equipo de la liga en las dos condiciones, pero la diferenc
 
 ---
 
-## 4. La eficiencia ofensiva fue una de las claves
+## 4. Fue el equipo más eficiente de la liga
 
 Comparación con los equipos que terminaron del 2° al 5° puesto:
 
@@ -140,9 +149,7 @@ A partir de las cuotas de Bet365 se calcularon los **puntos esperados** de cada 
 | Arsenal | 74.0 | 71 | -3.0 |
 | Manchester City | 75.9 | 66 | -9.9 |
 
-Leicester fue, por lejos, el equipo que más superó lo que esperaba el mercado.
-
-![Puntos esperados y obtenidos](images/puntos_esperados_vs_reales.png)
+Leicester fue, por lejos, el equipo que más superó lo que esperaba el mercado (ver el gráfico del resumen).
 
 Las casas de apuestas ajustaron sus expectativas a medida que avanzaba la temporada, pero Leicester siguió superándolas:
 
@@ -165,7 +172,7 @@ Comparando los puntos acumulados partido a partido, Leicester tuvo menos puntos 
 
 # 🏁 Conclusión
 
-Los datos indican que Leicester City no ganó la Premier League 2015/16 por dominar una estadística específica, sino por combinar consistencia, equilibrio y eficiencia.
+Los datos indican que Leicester City no ganó la Premier League 2015/16 por dominar una estadística específica, sino por combinar regularidad, equilibrio y eficiencia.
 
 No fue el equipo más goleador ni el que menos goles recibió, pero se mantuvo entre los mejores en ambas facetas y fue el que menos partidos perdió. Fue el mejor local y el mejor visitante de la liga, con una ventaja mayor fuera de casa, y necesitó menos tiros que sus rivales directos para marcar una cantidad de goles parecida.
 
