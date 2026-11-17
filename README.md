@@ -27,6 +27,7 @@ Para responderla se realizó un análisis exploratorio de datos con Python y Pan
 
 - Python
 - Pandas
+- Matplotlib
 - Jupyter Notebook
 - Git & GitHub
 
@@ -78,6 +79,8 @@ Leicester finalizó la temporada con:
 
 Ganó la liga con 10 puntos de ventaja sobre Arsenal. El dato más destacado es que solo perdió 3 partidos, la menor cantidad del campeonato, mientras que los equipos que terminaron del 2° al 5° puesto registraron entre 6 y 10 derrotas.
 
+![Derrotas por equipo](images/derrotas_por_equipo.png)
+
 ---
 
 ## 2. No fue el mejor ataque ni la mejor defensa
@@ -98,6 +101,10 @@ Leicester no lideró ninguna de las dos estadísticas, pero estuvo entre los mej
 
 Leicester sumó casi la misma cantidad de puntos y goles en ambas condiciones, y recibió exactamente los mismos goles de local que de visitante.
 
+Además, fue el mejor equipo de la liga en las dos condiciones, pero la diferencia fue mucho mayor de visitante: sumó 39 puntos fuera de casa, 5 más que Tottenham (34), mientras que de local superó por solo un punto a Manchester United (42 contra 41).
+
+![Puntos de local y de visitante](images/puntos_local_visitante.png)
+
 ---
 
 ## 4. La eficiencia ofensiva fue una de las claves
@@ -114,7 +121,9 @@ Comparación con los equipos que terminaron del 2° al 5° puesto:
 
 *Conversión = goles / tiros totales.*
 
-Leicester registró la mejor tasa de conversión entre estos equipos. Con 138 tiros menos que Tottenham, terminó la temporada con solo un gol menos.
+Leicester registró la mejor tasa de conversión entre estos equipos y también de toda la liga, cuyo promedio fue 10.51%. Con 138 tiros menos que Tottenham, terminó la temporada con solo un gol menos.
+
+![Tiros y goles por equipo](images/tiros_vs_goles.png)
 
 ---
 
@@ -137,7 +146,7 @@ Leicester no fue favorito en 17 de sus 38 partidos (45%) y aun así sumó 28 pun
 
 Los datos indican que Leicester City no ganó la Premier League 2015/16 por dominar una estadística específica, sino por combinar consistencia, equilibrio y eficiencia.
 
-No fue el equipo más goleador ni el que menos goles recibió, pero se mantuvo entre los mejores en ambas facetas y fue el que menos partidos perdió. Sumó puntos de manera similar como local y como visitante, necesitó menos tiros que sus rivales directos para marcar una cantidad de goles parecida y obtuvo una parte importante de sus puntos en partidos en los que no era favorito.
+No fue el equipo más goleador ni el que menos goles recibió, pero se mantuvo entre los mejores en ambas facetas y fue el que menos partidos perdió. Fue el mejor local y el mejor visitante de la liga, con una ventaja mayor fuera de casa, necesitó menos tiros que sus rivales directos para marcar una cantidad de goles parecida y obtuvo una parte importante de sus puntos en partidos en los que no era favorito.
 
 ---
 
@@ -156,6 +165,7 @@ premier_league_analysis/
 ├── data/
 │   ├── season-1516_csv.csv     # Dataset de la temporada 2015/16
 │   └── datapackage.json        # Metadatos y licencia de la fuente
+├── images/                     # Gráficos generados por el notebook
 ├── notebooks/
 │   └── analysis.ipynb          # Análisis completo
 └── README.md
@@ -172,7 +182,7 @@ premier_league_analysis/
    ```
 2. Instalar las dependencias:
    ```bash
-   pip install pandas jupyter
+   pip install pandas matplotlib jupyter
    ```
 3. Abrir `notebooks/analysis.ipynb` y ejecutar todas las celdas en orden (Restart & Run All).
 
