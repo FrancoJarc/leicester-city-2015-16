@@ -195,7 +195,9 @@ Además, sumó 27.7 puntos más de los que esperaba el mercado, la mayor diferen
 leicester-city-2015-16/
 ├── data/
 │   ├── season-1516_csv.csv     # Dataset de la temporada 2015/16
-│   └── datapackage.json        # Metadatos y licencia de la fuente
+│   ├── datapackage.json        # Metadatos y licencia de la fuente
+│   └── processed/
+│       └── team_matches.csv    # Una fila por equipo por partido, exportada para Tableau
 ├── images/                     # Gráficos generados por el notebook
 ├── notebooks/
 │   └── analysis.ipynb          # Análisis completo
